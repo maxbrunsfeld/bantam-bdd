@@ -1,10 +1,17 @@
 bantam-bdd
 ==========
 
-This is a minimalistic BDD framework for C. It consists of a single header file, `bantam_bdd.h`.
+Bantam is a minimalist [BDD](http://dannorth.net/introducing-bdd/)-style testing library for C. It helps you to write clean and readable tests,
+and consists of only a single header file.
 
-Example
--------
+Setup
+-----
+
+- Add `bantam_bdd.h` to your project.
+- Compile your tests with nested functions enabled, using `gcc -fnested-functions`.
+
+Usage
+-----
 
 ```c
 #include "bantam_bdd.h"
@@ -49,4 +56,14 @@ int main()
   RUN_TESTS(integer_math);
 }
 
+```
+
+Running this program produces this output:
+
+```
+integer_math
+  addition
+    is commutative
+  subtraction
+    is not associative
 ```
