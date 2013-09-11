@@ -1,6 +1,8 @@
 #ifndef __BANTAM_BDD__
 #define __BANTAM_BDD__
 
+#include "stdlib.h"
+
 #ifndef REPORT_TEST
 #include "stdio.h"
 #define REPORT_TEST(description, depth) \
@@ -22,7 +24,9 @@
     (void)__before_hooks; (void)__after_hooks;
 
 #define END_TEST \
-  __RUN_AFTER_HOOKS }
+  __RUN_AFTER_HOOKS \
+  free(__before_hooks); \
+  free(__after_hooks); }
 
 #define DESCRIBE(description) \
   REPORT_TEST(description, __current_depth) \
