@@ -8,7 +8,9 @@ Setup
 -----
 
 - Add `bantam_bdd.h` to your project.
-- Compile your tests with nested functions enabled, using `gcc -fnested-functions`.
+- When compiling your tests, enable one of these features:
+  - Nested functions (`gcc -fnested-functions`)
+  - C++ lambdas (`c++ -std=c++11 -stdlib=libc++`)
 
 Usage
 -----
